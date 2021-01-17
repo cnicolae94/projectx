@@ -1,5 +1,5 @@
-#include "..\headers\Film.h";
-#include "null_exception.cpp";
+#include "..\headers\Film.h"
+#include "null_exception.cpp"
 
 Film::Film() : cod(-1)
 {
@@ -7,12 +7,11 @@ Film::Film() : cod(-1)
 	tip = nullptr;
 	oreRulare = nullptr;
 	categorie = "N/A";
-
 	minimVarsta = 1;
 	rating = 11;
 }
 
-Film::Film(int cod, string nume, char* tip, string categorie, int minimVarsta, float rating) : cod(cod)
+Film::Film(int cod, string nume, string categorie, int minimVarsta, float rating) : cod(cod)
 {
 	this->nume = nume;
 	this->tip = nullptr;
@@ -69,8 +68,31 @@ string Film::getCategorie()
 	return categorie;
 }
 
+void Film::setMinim(int minimVarsta)
+{
+	this->minimVarsta = minimVarsta;
+}
 
+int Film::getMinim()
+{
+	return minimVarsta;
+}
 
+void Film::setRating(float rating)
+{
+	this->rating = rating;
+}
+
+float Film::getRating()
+{
+	return rating; 
+}
+
+float Film::getMedieRating()
+{
+	float a = 7;
+	return a;
+}
 
 
 
