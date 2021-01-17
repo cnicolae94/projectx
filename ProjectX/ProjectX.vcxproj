@@ -139,7 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="sources\Film.cpp" />
+    <ClCompile Include="sources\Bilet.cpp" />
     <ClCompile Include="ProjectX.cpp" />
+    <ClCompile Include="sources\null_exception.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="headers\Film.h" />
+    <ClInclude Include="headers\Bilet.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
