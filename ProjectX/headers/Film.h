@@ -9,7 +9,7 @@ class Film
 {
 public:
 	Film();
-	Film(int, string, string, int, float);
+	Film(int, string, char*, string, int, float);
 
 	void setCod(int);
 	int getCod();
@@ -29,7 +29,7 @@ public:
 	void setRating(float);
 	float getRating();
 
-	static float getMedieRating();
+	static void medieRating();
 
 private:
 	int cod;
@@ -39,7 +39,7 @@ private:
 	string categorie; // e.g. fantezie / romantic 
 	int minimVarsta;  // e.g. 18 - interzis minorilor / 15 - nerecomendat sub 15 ani etc
 	float rating; // e.g. nota filmului e.g. 7.32 pe IMDb de la 1 la 10
-	static float medieRating;
+	static int medieRating;
 };
 
 

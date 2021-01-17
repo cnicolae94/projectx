@@ -1,49 +1,24 @@
+// ProjectX.cpp : This file contains the 'main' function. Program execution begins and ends there.
+
 #include <iostream>
 #include <string>
 
 #include "headers\Bilet.h"
-#include "headers\Film.h"
 
 using namespace std;
 
-void phase1();
-
 int main()
 {
-    phase1();
-
+    std::cout << "Hello World!\n";
 }
 
-void phase1()
-{
-    Film f1;
+// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
+// Debug program: F5 or Debug > Start Debugging menu
 
-    f1.setNume("Ratatouille");
-    
-    cout << f1.getCod() << endl;
-    cout << f1.getCategorie() << endl;
-    
-    f1.setTip("2D");
-    cout << f1.getTip() << endl << endl;
-
-    Film f2(2, "Bee Movie", "Pentru copii", 3, 8.20);
-    f2.setTip("3D");
-
-    cout << "Nume film: " << f2.getNume() << endl; 
-    cout << "Tipul filmului: " << f2.getTip() << endl;
-    cout << "Categoria filmului: " << f2.getCategorie() << endl;
-    cout << "Varsta minima pentru vizionare: " << f2.getMinim() << endl;
-    cout << "Rating film: " << f2.getRating() << endl << endl;
-
-    Bilet b1;
-    b1.setFilm(f2);
-
-    cout << "BILET   " << b1.getNrSala() << endl;
-    cout << "BILET   " << b1.getCod() << endl;
-    cout << "BILET   " << b1.getFilm().getNume() << endl;
-    cout << "BILET   " << b1.getOraFilm() << endl;
-    cout << "BILET   " << b1.getPret() << endl;
-    cout << "BILET   " << b1.getNrLoc() << endl;
-
-
-}
+// Tips for Getting Started: 
+//   1. Use the Solution Explorer window to add/manage files
+//   2. Use the Team Explorer window to connect to source control
+//   3. Use the Output window to see build output and other messages
+//   4. Use the Error List window to view errors
+//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
+//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
