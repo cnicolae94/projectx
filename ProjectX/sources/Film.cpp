@@ -5,7 +5,6 @@ Film::Film() : cod(-1)
 {
 	nume = "Undefined";
 	tip = nullptr;
-	oreRulare = nullptr;
 	categorie = "N/A";
 	minimVarsta = 1;
 	rating = 11;
