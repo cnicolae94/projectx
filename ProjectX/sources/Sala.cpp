@@ -45,6 +45,83 @@ Sala::Sala(int nrSala, int nrLocuri, int* locuri, int nrOre, int* oreRulare) : n
 	}
 }
 
+Sala::~Sala()
+{
+	if (locuri != nullptr) {
+		delete[] locuri;
+	}
+	if (oreRulare != nullptr) {
+		delete[] oreRulare;
+	}
+}
+
+Sala::Sala(const Sala& s) : nrSala(s.nrSala)
+{
+	if (s.locuri != nullptr && s.nrLocuri > 0)
+	{
+		nrLocuri = s.nrLocuri;
+		locuri = new int[s.nrLocuri];
+		for (int i = 0; i < s.nrLocuri; i++)
+		{
+			locuri[i] = s.locuri[i];
+		}
+	}
+	else
+	{
+		locuri = nullptr;
+		nrLocuri = 0;
+	}
+
+	if (s.oreRulare != nullptr && s.nrOre > 0)
+	{
+		nrOre = s.nrOre;
+		oreRulare = new int[s.nrOre];
+		for (int i = 0; i < s.nrOre; i++)
+		{
+			oreRulare[i] = s.oreRulare[i];
+		}
+	}
+	else {
+		oreRulare = nullptr;
+		nrOre = 0;
+	}
+}
+
+Sala& Sala::operator=(const Sala& s)
+{
+	nrSala = s.nrSala;
+
+	if (s.locuri != nullptr && s.nrLocuri > 0)
+	{
+		nrLocuri = s.nrLocuri;
+		locuri = new int[s.nrLocuri];
+		for (int i = 0; i < s.nrLocuri; i++)
+		{
+			locuri[i] = s.locuri[i];
+		}
+	}
+	else {
+		locuri = nullptr;
+		nrLocuri = 0;
+	}
+		if (s.oreRulare != nullptr && s.nrOre > 0)
+		{
+			nrOre = s.nrOre;
+			oreRulare = new int[s.nrOre];
+			for (int i = 0; i < s.nrOre; i++)
+			{
+				oreRulare[i] = s.oreRulare[i];
+			}
+		}
+		else {
+			oreRulare = nullptr;
+			nrOre = 0;
+		}
+
+		return *this;
+	}
+
+
 void Sala::setNrSala(int nrSala)
 {
 	this->nrSala = nrSala;

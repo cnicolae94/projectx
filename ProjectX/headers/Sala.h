@@ -13,6 +13,16 @@ public:
 	Sala();
 	Sala(int, int, int);
 	Sala(int, int, int*, int, int*);
+	Sala(const Sala&);
+	~Sala();
+
+	Sala& operator=(const Sala&);
+
+	//bool operator!();
+
+	//Sala operator++();
+	
+	//explicit operator int();
 
 	void setNrSala(int);
 	int getNrSala();
@@ -28,6 +38,10 @@ public:
 
 	void setOreRulare(int*);
 	int* getOreRulare();
+
+	//friend bool operator==(const Sala& s1, const Sala& s2);
+	//friend ostream& operator<<(ostream&, Sala);  
+	//friend istream& operator>>(istream&, Sala&);
 
 private:
 	int nrSala;					//nr salii

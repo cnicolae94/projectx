@@ -30,11 +30,11 @@ int main()
 
 void phase1()
 {
-    Film f1 = testFilm();
+    //Film f1 = testFilm();
 
     //Bilet b1 = testBilet(f1);
 
-    //Sala s1 = testSala();
+    Sala s1 = testSala();
 
     //Sala sali[3] = { s1 };
 
@@ -61,7 +61,7 @@ Film testFilm()
     f2.setTip("3D");
 
     //cout << f2;
-    cout << (int)f2;
+    //cout << (int)f2;
     //cout << !f2;
     //f2++;
     //cout << f2;
@@ -121,7 +121,11 @@ Sala testSala()
     }
     cout << endl;
 
-    const int NR_LOCURI_S3 = 50;
+    Sala s3(s2);
+    //cout << "NR ORE: " << s3.getNrOre() << endl;
+    cout << "NR ORE: " << s3.getNrOre() << endl;
+
+   /* const int NR_LOCURI_S3 = 50;
     int locuriS3[NR_LOCURI_S2] = { 0 };
 
     const int NR_ORE_S3 = 4;
@@ -129,9 +133,9 @@ Sala testSala()
 
     Sala s3(2, NR_LOCURI_S2, locuriS3, NR_ORE_S3, oreS3);
 
-    cout << endl;
+    cout << endl; */
 
-    return s3;
+    return s2;
 }
 
 Aliment testAliment()
