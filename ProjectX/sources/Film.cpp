@@ -22,6 +22,16 @@ Film::Film(int cod, string nume, string categorie, int minimVarsta, float rating
 	this->rating = rating;
 }
 
+Film::Film(int cod, string nume, string categorie, int minimVarsta, float rating, Sala sala) : cod(cod)
+{
+	this->nume = nume;
+	this->tip = nullptr;
+	this->categorie = categorie;
+	this->minimVarsta = minimVarsta;
+	this->rating = rating;
+	this->sala = sala;
+}
+
 Film::Film(const Film& f) : cod(f.cod)
 {
 	nume = f.nume;
@@ -58,6 +68,7 @@ Film& Film::operator=(const Film& f)
 	categorie = f.categorie;
 	minimVarsta = f.minimVarsta;
 	rating = f.rating;
+	sala = f.sala;
 
 	if (f.tip != nullptr) {
 		int len = strlen(f.tip) + 1;
@@ -137,6 +148,16 @@ void Film::setRating(float rating)
 float Film::getRating()
 {
 	return rating; 
+}
+
+void Film::setSala(Sala sala)
+{
+	this->sala = sala;
+}
+
+Sala Film::getSala()
+{
+	return sala;
 }
 
 Film Film::operator+(int plusVarsta)
