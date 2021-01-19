@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include "Sala.h"
 
 using namespace std;
 
@@ -10,6 +11,7 @@ class Film
 public:
 	Film(); // constructor implicit
 	Film(int, string, string, int, float); // constructor explicit
+	Film(int, string, string, int, float, Sala); // constructor explicit
 	Film(const Film&); // constructor de copiere
 	~Film(); // destructor
 
@@ -41,6 +43,9 @@ public:
 	void setRating(float);
 	float getRating();
 
+	void setSala(Sala sala);
+	Sala getSala();
+
 	static void setDistribuitor(string distribuitor);
 	static string getDistribuitor();
 
@@ -57,6 +62,8 @@ private:
 	string categorie; // e.g. fantezie / romantic 
 	int minimVarsta;  // e.g. 18 - interzis minorilor / 15 - nerecomendat sub 15 ani etc
 	float rating; // e.g. nota filmului e.g. 7.32 pe IMDb de la 1 la 10
+	Sala sala; // sala unde ruleaza filmul
+
 	static string distribuitor;
 };
 

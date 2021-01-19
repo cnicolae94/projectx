@@ -9,6 +9,16 @@
 
 using namespace std;
 
+/*
+ * Phase 2 - Ticket Selling Point Module
+ */
+void phase2(); 
+
+Cinema initCinema();
+
+/*
+ * Phase 1 - Wrapping function to test functionality 
+ */
 void phase1();
 
 Film testFilm();
@@ -19,28 +29,110 @@ Cinema testCinema(Sala* sali, int nrSali);
 
 int main()
 {
-    phase1();
+    // Simply tests class functionality
+    // phase1();
 
-    //Cinema.intro();
-
-    //Cinema.emiteBilet
+    phase2();
 
     return 0;
 }
 
+void phase2()
+{
+    Cinema cinemaTix = initCinema();
+
+    Cinema::intro(); // Welcome to CinemaTix..
+    
+    int n;
+    bool breakLoop = true;
+
+    do {
+		cout << "\nOptiunea dvs: ";
+		cin >> n;
+        switch (n)
+        {
+        case 1:
+            cinemaTix.emiteBilet();
+            breakLoop = true;
+            break;
+        case 2:
+            //Cinema::afiseazaLocuriLibere();
+            breakLoop = true;
+            break;
+        case 3:
+            //Cinema::afiseazaFilme();
+            breakLoop = true;
+            break;
+        case 4:
+            //Cinema::afiseazaMeniuCrud();
+            breakLoop = true;
+            break;
+        default:
+            cout << "Optiunea: " << n << " nu este valida.\
+Va rugam selectati una din optiunile: 1 | 2 | 3 | 4\n";
+
+            breakLoop = false;
+        }
+    } while (!breakLoop);
+
+    cout << "End of phase2!";
+}
+
+
+Cinema initCinema()
+{
+    const int NR_LOCURI_S1 = 10;
+    const int NR_LOCURI_S2 = 25;
+    const int NR_LOCURI_S3 = 50;
+
+    int locuriS1[NR_LOCURI_S1] = { 0 };
+    int locuriS2[NR_LOCURI_S2] = { 0 };
+    int locuriS3[NR_LOCURI_S3] = { 0 };
+
+    const int NR_ORE_S1 = 4;
+    const int NR_ORE_S2 = 5;
+    const int NR_ORE_S3 = 6;
+
+    int oreS1[NR_ORE_S1] = { 11, 13, 17, 20 };
+    int oreS2[NR_ORE_S2] = { 9, 12, 15, 18, 21 };
+    int oreS3[NR_ORE_S3] = { 10, 11, 14, 16, 19, 22 };
+
+    Sala s1(1, NR_LOCURI_S1, locuriS1, NR_ORE_S1, oreS1);
+    Sala s2(2, NR_LOCURI_S2, locuriS2, NR_ORE_S2, oreS2);
+    Sala s3(3, NR_LOCURI_S3, locuriS3, NR_ORE_S3, oreS3);
+
+    Sala sali[3] = { s1, s2, s3 };
+
+    Film f1(1, "Ratatouille", "Pnetru copii", 3, 8.9, s1);
+    f1.setTip("2D");
+
+    Film f2(2, "Bee Movie", "Pentru copii", 3, 8.20, s2);
+    f2.setTip("3D");
+
+    Film f3(3, "Avengers", "Fantezie", 12, 7.8, s3);
+    f3.setTip("3D");
+
+    Film filme[3] = { f1, f2, f3 };
+
+    Cinema cinema("CinemaTix", sali, 3, filme, 3);
+
+    return cinema;
+}
+
+
 void phase1()
 {
-    //Film f1 = testFilm();
+    Film f1 = testFilm();
 
-    //Bilet b1 = testBilet(f1);
+    Bilet b1 = testBilet(f1);
 
-    //Sala s1 = testSala();
+    Sala s1 = testSala();
 
-    //Sala sali[3] = { s1 };
+    Sala sali[3] = { s1 };
 
-    //Aliment a = testAliment();
+    Aliment a = testAliment();
 
-    //Cinema c1 = testCinema(sali, 3);
+    Cinema c1 = testCinema(sali, 3);
 }
 
 Film testFilm()
@@ -49,13 +141,12 @@ Film testFilm()
 
     Film f1;
 
-    //f1.setNume("Ratatouille");
-    //
-    //cout << f1.getCod() << endl;
-    //cout << f1.getCategorie() << endl;
-    //
-    //f1.setTip("2D");
-    //cout << f1.getTip() << endl << endl;
+    f1.setNume("Ratatouille");
+    cout << f1.getCod() << endl;
+    cout << f1.getCategorie() << endl;
+    
+    f1.setTip("2D");
+    cout << f1.getTip() << endl << endl;
 
     Film f2(2, "Bee Movie", "Pentru copii", 3, 8.20);
     f2.setTip("3D");
@@ -66,17 +157,16 @@ Film testFilm()
     cout << f2 << endl;
     cout << f3 << endl;
 
-    //cout << f2;
-    //cout << (int)f2;
-    //cout << !f2;
-    //f2++;
+    cout << f2;
+    cout << (int)f2;
+    cout << !f2;
     //cout << f2;
 
-    //cout << "Nume film: " << f2.getNume() << endl; 
-    //cout << "Tipul filmului: " << f2.getTip() << endl;
-    //cout << "Categoria filmului: " << f2.getCategorie() << endl;
-    //cout << "Varsta minima pentru vizionare: " << f2.getMinim() << endl;
-    //cout << "Rating film: " << f2.getRating() << endl << endl;
+    cout << "Nume film: " << f2.getNume() << endl; 
+    cout << "Tipul filmului: " << f2.getTip() << endl;
+    cout << "Categoria filmului: " << f2.getCategorie() << endl;
+    cout << "Varsta minima pentru vizionare: " << f2.getMinim() << endl;
+    cout << "Rating film: " << f2.getRating() << endl << endl;
 
     return f1;
 }
@@ -133,16 +223,13 @@ Sala testSala()
     cout << s4;
 
 
-    //Sala s3(s2);
-   /* const int NR_LOCURI_S3 = 50;
+    const int NR_LOCURI_S3 = 50;
     int locuriS3[NR_LOCURI_S2] = { 0 };
 
     const int NR_ORE_S3 = 4;
     int oreS3[NR_ORE_S3] = { 11, 13, 17, 20 };
 
-    Sala s3(2, NR_LOCURI_S2, locuriS3, NR_ORE_S3, oreS3);
-
-    cout << endl; */
+    cout << endl;
 
     return s2;
 }
