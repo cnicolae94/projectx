@@ -7,10 +7,21 @@ using namespace std;
 
 class Film
 {
-
 public:
-	Film();
-	Film(int, string, string, int, float);
+	Film(); // constructor implicit
+	Film(int, string, string, int, float); // constructor explicit
+	Film(const Film&); // constructor de copiere
+	~Film(); // destructor
+
+	Film& operator=(const Film&); // forma supraincarcata a lui =
+
+	Film operator+(int plusVarsta);
+
+	bool operator!();
+
+	Film operator++();
+
+	explicit operator int();
 
 	void setCod(int);
 	int getCod();
@@ -30,7 +41,14 @@ public:
 	void setRating(float);
 	float getRating();
 
-	static float getMedieRating();
+	static void setDistribuitor(string distribuitor);
+	static string getDistribuitor();
+
+	static float getMedieRating(Film* filme, int nrFilme);
+
+	friend bool operator==(const Film& f1, const Film& f2);
+	friend ostream& operator<<(ostream&, Film);
+	friend istream& operator>>(istream&, Film&);
 
 private:
 	int cod;
@@ -39,7 +57,7 @@ private:
 	string categorie; // e.g. fantezie / romantic 
 	int minimVarsta;  // e.g. 18 - interzis minorilor / 15 - nerecomendat sub 15 ani etc
 	float rating; // e.g. nota filmului e.g. 7.32 pe IMDb de la 1 la 10
-	static float medieRating;
+	static string distribuitor;
 };
 
 

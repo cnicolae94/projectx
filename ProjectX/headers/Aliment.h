@@ -7,29 +7,29 @@ using namespace std;
 
 class Aliment
 {
-
 public:
 	Aliment();
 	Aliment(int, string, float, int);
+	~Aliment();
 
-	void setCodA(int);
-	int getCodA();
+	void setCod(int);
+	int getCod();
 
-	void setTip(char*);  // avocado
-	char* getTipA();
+	void setTip(const char*);  
+	char* getTip();
 
 	void setNume(string); 
-	string getNumeA();
+	string getNume();
 
 	void setPret(float);
-	float getPretA();
+	float getPret();
 
 	void setGramaj(int);
-	int getGramajA();
+	int getGramaj();
 		
 private:
 	int cod;
-	char* tip;  // avocado 
+	char* tip; // S / M / L / XL / XXL
 	string nume;
 	float pret;
 	int gramaj;
