@@ -34,7 +34,7 @@ void phase1()
 
     //Bilet b1 = testBilet(f1);
 
-    Sala s1 = testSala();
+    //Sala s1 = testSala();
 
     //Sala sali[3] = { s1 };
 
@@ -59,6 +59,12 @@ Film testFilm()
 
     Film f2(2, "Bee Movie", "Pentru copii", 3, 8.20);
     f2.setTip("3D");
+
+    f1 = f2; // Works
+    Film f3(f2); // Works
+    cout << f1 << endl;
+    cout << f2 << endl;
+    cout << f3 << endl;
 
     //cout << f2;
     //cout << (int)f2;
@@ -92,8 +98,6 @@ Bilet testBilet(Film film)
     return b1;
 }
 
-
-
 Sala testSala()
 {
     cout << "Testare clasa Sala" << endl;
@@ -121,10 +125,15 @@ Sala testSala()
     }
     cout << endl;
 
-    Sala s3(s2);
-    //cout << "NR ORE: " << s3.getNrOre() << endl;
+    Sala s3;
+    s3 = s2;
     cout << "NR ORE: " << s3.getNrOre() << endl;
 
+    Sala s4(s3);
+    cout << s4;
+
+
+    //Sala s3(s2);
    /* const int NR_LOCURI_S3 = 50;
     int locuriS3[NR_LOCURI_S2] = { 0 };
 

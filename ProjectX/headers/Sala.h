@@ -18,11 +18,13 @@ public:
 
 	Sala& operator=(const Sala&);
 
-	//bool operator!();
+	Sala operator++();
 
-	//Sala operator++();
+	bool operator!();
+
+	int& operator[](int index);
 	
-	//explicit operator int();
+	explicit operator int();
 
 	void setNrSala(int);
 	int getNrSala();
@@ -39,14 +41,15 @@ public:
 	void setOreRulare(int*);
 	int* getOreRulare();
 
-	//friend bool operator==(const Sala& s1, const Sala& s2);
-	//friend ostream& operator<<(ostream&, Sala);  
-	//friend istream& operator>>(istream&, Sala&);
+	friend bool operator==(const Sala& s1, const Sala& s2);
+	friend ostream& operator<<(ostream&, Sala);  
+	friend istream& operator>>(istream&, Sala&);
 
 private:
 	int nrSala;					//nr salii
-	int* locuri;				//locurile ocupate
+	int* locuri;				// locurile 0 - liber 1 - ocupat
 	int nrLocuri;				//nr de locuri
+	int nrLocuriOcupate;
 	int* oreRulare;			
 	int nrOre;
 };

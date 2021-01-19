@@ -10,7 +10,6 @@ Bilet::Bilet() : cod(-1)
 	nrLoc = 0;
 	oraFilm = 25;
 	pret = -1;
-
 }
 
 Bilet::Bilet(int cod, Film film, int nrSala, int nrLoc, int oraFilm, float pret) : cod(cod)
