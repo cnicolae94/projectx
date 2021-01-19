@@ -139,7 +139,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="sources\Cinema.cpp" />
+    <ClCompile Include="sources\Aliment.cpp" />
+    <ClCompile Include="sources\Film.cpp" />
+    <ClCompile Include="sources\Bilet.cpp" />
     <ClCompile Include="ProjectX.cpp" />
+    <ClCompile Include="sources\null_exception.cpp" />
+    <ClCompile Include="sources\Sala.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="headers\Cinema.h" />
+    <ClInclude Include="headers\Aliment.h" />
+    <ClInclude Include="headers\Film.h" />
+    <ClInclude Include="headers\Bilet.h" />
+    <ClInclude Include="headers\Sala.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
